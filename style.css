@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 body{
-    height: 1200px;
+    height: 1300px;
 
 }
 .name {
@@ -36,7 +36,7 @@ body{
 .container1 {
     margin: 0;
     position: absolute;
-    width: 900px;
+    width: 1025px;
     height: 1125px;
     left: 250px;
     top: 95px;
@@ -46,8 +46,9 @@ body{
 
 .upper {
     margin: 0;
-    background-color: #dc4a56;    
-    padding-bottom: 11rem;
+    background-color: #4a89dc;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJyB2aWV3Qm94PScwIDAgMTAwIDEwMCc+PGcgZmlsbC1ydWxlPSdldmVub2RkJz48ZyBmaWxsPScjZmZmZmZmJyBmaWxsLW9wYWNpdHk9JzAuMTInPjxwYXRoIG9wYWNpdHk9Jy41JyBkPSdNOTYgOTVoNHYxaC00djRoLTF2LTRoLTl2NGgtMXYtNGgtOXY0aC0xdi00aC05djRoLTF2LTRoLTl2NGgtMXYtNGgtOXY0aC0xdi00aC05djRoLTF2LTRoLTl2NGgtMXYtNGgtOXY0aC0xdi00SDB2LTFoMTV2LTlIMHYtMWgxNXYtOUgwdi0xaDE1di05SDB2LTFoMTV2LTlIMHYtMWgxNXYtOUgwdi0xaDE1di05SDB2LTFoMTV2LTlIMHYtMWgxNXYtOUgwdi0xaDE1VjBoMXYxNWg5VjBoMXYxNWg5VjBoMXYxNWg5VjBoMXYxNWg5VjBoMXYxNWg5VjBoMXYxNWg5VjBoMXYxNWg5VjBoMXYxNWg5VjBoMXYxNWg0djFoLTR2OWg0djFoLTR2OWg0djFoLTR2OWg0djFoLTR2OWg0djFoLTR2OWg0djFoLTR2OWg0djFoLTR2OWg0djFoLTR2OXptLTEgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTEwIDB2LTloLTl2OWg5em0tMTAgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTEwIDB2LTloLTl2OWg5em0tMTAgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTktMTBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptMTAgMGg5di05aC05djl6bTEwIDBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptMTAgMGg5di05aC05djl6bTEwIDBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptOS0xMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTEwIDB2LTloLTl2OWg5em0tMTAgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTEwIDB2LTloLTl2OWg5em0tMTAgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTktMTBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptMTAgMGg5di05aC05djl6bTEwIDBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptMTAgMGg5di05aC05djl6bTEwIDBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptOS0xMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTEwIDB2LTloLTl2OWg5em0tMTAgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTEwIDB2LTloLTl2OWg5em0tMTAgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTktMTBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptMTAgMGg5di05aC05djl6bTEwIDBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptMTAgMGg5di05aC05djl6bTEwIDBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptOS0xMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTEwIDB2LTloLTl2OWg5em0tMTAgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTEwIDB2LTloLTl2OWg5em0tMTAgMHYtOWgtOXY5aDl6bS0xMCAwdi05aC05djloOXptLTktMTBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptMTAgMGg5di05aC05djl6bTEwIDBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXptMTAgMGg5di05aC05djl6bTEwIDBoOXYtOWgtOXY5em0xMCAwaDl2LTloLTl2OXonLz48cGF0aCBkPSdNNiA1VjBINXY1SDB2MWg1djk0aDFWNmg5NFY1SDZ6Jy8+PC9nPjwvZz48L3N2Zz4=);
+    padding-bottom: 13rem;
     padding-top: 1rem;
     border-radius: 1rem 1rem 0px 0px;
 }
@@ -57,11 +58,10 @@ img {
     width: 180px;
     height: 180px;
     left: 45px;
-    top: 40px;  
+    top: 65px;
     filter: grayscale(100%);
     border: 8px solid white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 1rem 1rem 0px 0px;
 }
 
 .name1 {
@@ -77,10 +77,11 @@ img {
 .para {
     position: absolute;
     left: 356px;
-    top: 100px;
+    top: 130px;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 1rem;
+
     color: #FFFFFF;
 
 }
@@ -127,7 +128,7 @@ img {
 }
 
 .about {
-    padding:15px 15px;
+    padding: 30px 30px;
 }
 
 .about h2 {
@@ -141,49 +142,45 @@ img {
 .about p {
 
     font-family: 'Roboto', sans-serif;
-    font-weight: 650;
+    font-weight: 500;
     font-size: 1rem;
 
     color: rgb(93, 93, 93);
     font-weight: 600;
     line-height: 1.5;
     word-spacing: 0.8px;
-    letter-spacing: 0.3px; 
-    padding-top: 0%;
+    letter-spacing: 0.3px;
 
 }
 
 .table1 {
 
     font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1rem;
 
     color: rgb(93, 93, 93);
+    font-weight: 600;
     line-height: 1.5;
-    padding-left: 2rem;
+    padding-left: 3rem;
     padding-top: 3rem;
 }
 
 tr {
-    line-height: 1.8;
+    line-height: 2;
 }
 
 th {
     text-align: left;
     padding-left: 1rem;
     color: rgb(93, 93, 93);
-    font-weight: bolder;
 
 }
 
 td {
-    padding-left: 2rem; 
-    padding-right: 5rem;
+    padding-left: 5rem;
     color: rgb(93, 93, 93);
-
 }
-
 
 hr {
     border: 0.5px solid rgb(183, 183, 183);
@@ -194,4 +191,4 @@ h2{
     color: rgb(59, 59, 59);
     font-weight: 600;
     line-height: 2.5rem;
-} 
+}
