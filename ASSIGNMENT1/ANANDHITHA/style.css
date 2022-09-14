@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body{
+    height: 1200px;
+
+}
+.name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    position: absolute;
+    float: left;
+    margin: 1.8rem;
+    left: 225px;
+    color: rgb(105, 104, 104);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+
+
+}
+
+.icons {
+    position: absolute;
+    float: right;
+    margin: 1.8rem;
+    right: 235px;
+}
+
+.fa-brands {
+    padding: 6px;
+    font-size: 1.2rem;
+    color: rgb(105, 104, 104);
+}
+
+.container1 {
+    margin: 0;
+    position: absolute;
+    width: 900px;
+    height: 1125px;
+    left: 250px;
+    top: 95px;
+    box-shadow: rgba(144, 144, 144, 0.616) 0px 22px 70px 4px;
+    border-radius: 2rem ;
+}
+
+.upper {
+    margin: 0;
+    background-color: #dc4a56;    
+    padding-bottom: 11rem;
+    padding-top: 1rem;
+    border-radius: 1rem 1rem 0px 0px;
+}
+
+img {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 45px;
+    top: 40px;  
+    filter: grayscale(100%);
+    border: 8px solid white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1rem 1rem 0px 0px;
+}
+
+.name1 {
+    position: absolute;
+    left: 354px;
+    top: 40px;
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+}
+
+.para {
+    position: absolute;
+    left: 356px;
+    top: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #FFFFFF;
+
+}
+
+.buttons {
+    display: flexbox;
+    flex-direction: column;
+}
+
+.cv {
+    position: relative;
+    left: 356px;
+    top: 160px;
+    bottom: 3px;
+    border-radius: 1.5rem;
+    padding: 9px 20px;
+    border: none;
+}
+
+.hire{
+    
+    position: relative;
+    left: 356px;
+    top: 160px;
+    bottom: 5px;
+    padding: 10px;
+    border-radius: 1.5rem;
+    padding: 9px 20px;
+    border: none;
+    background-color: rgb(65, 184, 154);
+}
+.hire a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.cv a{
+    text-decoration: none;
+    color: black;
+}
+
+.middle {
+    display: flex;
+    flex-direction: row;
+}
+
+.about {
+    padding:15px 15px;
+}
+
+.about h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    color: rgb(59, 59, 59);
+    font-weight: 600;
+    line-height: 2.5rem;
+}
+
+.about p {
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 650;
+    font-size: 1rem;
+
+    color: rgb(93, 93, 93);
+    font-weight: 600;
+    line-height: 1.5;
+    word-spacing: 0.8px;
+    letter-spacing: 0.3px; 
+    padding-top: 0%;
+
+}
+
+.table1 {
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+
+    color: rgb(93, 93, 93);
+    line-height: 1.5;
+    padding-left: 2rem;
+    padding-top: 3rem;
+}
+
+tr {
+    line-height: 1.8;
+}
+
+th {
+    text-align: left;
+    padding-left: 1rem;
+    color: rgb(93, 93, 93);
+    font-weight: bolder;
+
+}
+
+td {
+    padding-left: 2rem; 
+    padding-right: 5rem;
+    color: rgb(93, 93, 93);
+
+}
+
+
+hr {
+    border: 0.5px solid rgb(183, 183, 183);
+}
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    color: rgb(59, 59, 59);
+    font-weight: 600;
+    line-height: 2.5rem;
+} 
