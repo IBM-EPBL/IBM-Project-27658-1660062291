@@ -5,7 +5,7 @@
 
 FOCUS ELEMENTS: 
 
-1. Login page - with Databse connection
+1. Login page - with Database connection
 2. Sign up page - with database connection
 3. Password change - with database connection
 4. Connecting Dashboard,Home,About,Profile pages - frontend.
