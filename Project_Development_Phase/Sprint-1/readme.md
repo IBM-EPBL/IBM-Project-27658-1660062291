@@ -1,7 +1,7 @@
 **SPRINT-1 : PLASMA DONOR CLOUD APPLICATION**
 
       Code Upload in github completed
-      User Acceptance Testing Document for sprint-1: In-progress
+      User Acceptance Testing Document for sprint-1: Completed
 
 FOCUS ELEMENTS: 
 
