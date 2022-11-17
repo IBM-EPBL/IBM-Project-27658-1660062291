@@ -11,3 +11,4 @@ FOCUS ELEMENTS:
 4. Display Dashboard details for Donors as requests arrive.
 5. Connecting IBM DB2 
 
+Note: SSL certificate from IBM DB2 has not been added for security purposes.
