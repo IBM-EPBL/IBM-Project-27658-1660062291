@@ -13,4 +13,6 @@ FOCUS ELEMENTS:
   d) view Saved Requests as and when needed. 
  3. Database Connection with IBM-DB2 
  4. IBM Watson Assistant Integration 
+ 
+ Note: SSL Certificate has been removed for security purposes.
 
