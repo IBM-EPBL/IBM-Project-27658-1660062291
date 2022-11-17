@@ -10,4 +10,6 @@ FOCUS ELEMENTS:
   B) Send email upon password Change 
 2. IBM Cloud Object Storage -- for storing certificates of beneficiaries 
 
+Note: SSL certificate for db2 and .env file for sendgrid have been removed for security purposes.
+
 
