@@ -10,5 +10,5 @@ FOCUS ELEMENTS:
   B) Send email upon password Change 
 2. IBM Cloud Object Storage -- for storing certificates of beneficiaries 
 3. Containerize the app -- with Docker 
-4. Deploy the app -- using IBM Kubernetes
+4. Deploy the app -- using IBM Kubernetes 
 
