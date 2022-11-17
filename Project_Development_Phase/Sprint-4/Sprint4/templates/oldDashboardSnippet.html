@@ -1,0 +1,301 @@
+
+    
+    
+    {% extends 'base.html' %}
+    {% include 'navbar.html' %} 
+    
+    {% block head %}
+        <title>Profile</title>
+        
+    {% endblock %} 
+    
+    
+    {% block body %}
+    
+    
+    <div >
+        
+        <h3>Welcome {{session['user']}} </h3> 
+        <br>
+        
+              
+    </div>
+    
+    <!--
+    
+    <div class="dashboard-nav" align="center">
+        <button class="btn btn-info btn-md" onclick="showShortlisted()">Shortlisted Donors</button>
+        <button class="btn btn-info btn-md" onclick="showRequested()">Requested Donors</button>
+        
+    </div>
+    
+    <div class="dashboard-filter" align="center">
+        
+        
+    </div>
+    <div class="table-all">
+    
+    <table name="list" class="dashboard-table">
+        <tr class="dashboard-tr">
+    {% for heading in headings %}
+    <th class="dashboard-th">{{heading}}</th>
+    
+    {% endfor %}
+    </tr>
+    {% for row in data %}
+    <tr class="dashboard-tr">
+    {% for cell in row %}
+    <td class = "dashboard-td">{{ cell }}</td>
+    
+    {% endfor %}
+    <td class = "dashboard-td"><button class="btn btn-warning btn-md">Shortlist</button>&nbsp;&nbsp;<button class="btn btn-primary btn-md">Request</button></td>
+    
+    </tr>
+    {% endfor %}
+    </table>
+    </div>
+    <br>
+    <br>
+    <br><br>
+    -->
+    
+    {% if role=="donor" %}
+    <!--Donor Dashboard Start-->
+    <h1>Donor-Dashboard</h1>
+    <div class="donor-dashboard">
+    <h3 align = "center">Requests</h3>
+    
+    <div class="table-all">
+    
+        <table name="list" class="dashboard-table">
+            <tr class="dashboard-tr">
+        {% for heading in headings %}
+        <th class="dashboard-th">{{heading}}</th>
+        
+        {% endfor %}
+        </tr>
+     
+        {% for row in data %}
+        <tr class="dashboard-tr">
+        {% for cell in row %}
+        <td class = "dashboard-td">{{ cell }}</td>
+        
+        {% endfor %}
+        <td class = "dashboard-td"><button class="btn btn-primary btn-md" id="accept-btn-{{row[0]}}" onclick="accept(id)">Accept</button></td>
+        
+        </tr>
+        {% endfor %}
+     
+    
+        </table>
+        </div>
+    
+    
+    
+    </div>
+    
+    <div id = "beneficiary-info">
+    
+        <div id="request-accepted" >
+            <br>
+            <center>You have accepted the request!</center>
+            <br>
+    
+           </div>
+           <h3><center>Beneficiary Information</center></h3>
+        <table align="center" class = "donor-table">
+            <tr class="donor-table-row">
+                <th class="donor-table-header">Name</th>
+                <td class="donor-table-data">Abcde</td>
+            </tr>
+            <tr class="donor-table-row">
+                <th class="donor-table-header">Blood Group</th>
+                <td class="donor-table-data">B+</td>
+            </tr>
+            <tr class="donor-table-row">
+                <th class="donor-table-header">Email</th>
+                <td class="donor-table-data">abcde@gmail.com</td>
+            </tr>
+            <tr class="donor-table-row">
+                <th class="donor-table-header">Location</th>
+                <td class="donor-table-data">Chennai</td>
+            </tr>
+            <tr class="donor-table-row">
+                <th class="donor-table-header">Phone</th>
+                <td class="donor-table-data">9999999999</td>
+            </tr>
+    
+        </table>
+        <br><br>
+    
+    </div> 
+    
+    
+    <!--donor Dashboard End-->
+    
+    <!--Beneficiary Dashboard start-->
+    <br><br><br><br><br><br>
+    {% else %}
+    <h1>Beneficiary Dashboard</h1>
+    
+    <div class="beneficiary-dashboard">
+        <h3 align="center">My Details</h3>
+        <br>
+        <div class="beneficiary-details">
+            <table align="center" class = "beneficiary-table">
+                <tr class="beneficiary-table-row">
+                    <th class="beneficiary-table-header">Name</th>
+                    <td class="beneficiary-table-data">{{session['user']}}</td>
+                </tr>
+                <tr class="beneficiary-table-row">
+                    <th class="beneficiary-table-header">Blood Group</th>
+                    <td class="beneficiary-table-data">{{session['bloodgroup']}}</td>
+                </tr>
+                <tr class="beneficiary-table-row">
+                    <th class="beneficiary-table-header">Email</th>
+                    <td class="beneficiary-table-data">{{session['email']}}</td>
+                </tr>
+                <tr class="beneficiary-table-row">
+                    <th class="beneficiary-table-header">Location</th>
+                    <td class="beneficiary-table-data">{{session['city']}}</td>
+                </tr>
+                <tr class="beneficiary-table-row">
+                    <th class="beneficiary-table-header">Phone</th>
+                    <td class="beneficiary-table-data">{{session['phone']}}</td>
+                </tr>
+    
+            </table>
+            <br><br>
+        </div>
+            {% if beneficiary_status!="requested" %}
+        
+            
+            <form action="/change_to_requested_status" method="POST" name="changeStatus" onsubmit="requestDonors()">
+                <center>
+                <div>
+                   <input type="submit" class="btn btn-primary btn-lg" id="donor-req-btn"   value="Request Donors">
+                    
+                </div>
+                <div id="request-pending" >
+                    Your request is being processed... 
+                </div>
+                </center>
+            </form> 
+            <!--
+           <center><button class="btn btn-primary btn-lg" id="donor-req-btn" onclick="requestDonors()">Request Donors</button>
+           <br>
+           <br>
+           <div id="request-pending" >
+            Your request is being processed... 
+           </div>
+           </center> -->
+           {% endif %}
+           <br><br>
+    
+           {% if beneficiary_status=="requested" %} 
+    
+           <form action="/change_to_none_status" method="POST" name="changeStatus2" >
+            <center>
+            <div>
+               <input type="submit" class="btn btn-primary btn-lg" id="donor-req-btn" onclick="endrequestDonors()" value="Stop Requesting Donors">
+                
+            </div>
+            <div id="request-pending" >
+                Your request has been stopped... 
+            </div>
+            </center>
+            </form> 
+    
+           <!--
+           <center><button class="btn btn-primary btn-lg" id="donor-req-btn" onclick="requestDonors()">Stop Requesting Donors</button>
+           <br>
+           <br>
+           <div id="request-pending" >
+            Your request is being processed... 
+           </div>       
+    
+           </center> -->
+           {% endif %}
+           <br><br>
+        
+           <div id="donor-info">
+            <table class="dashboard-table">
+                <tr class="dashboard-tr">
+                    {% for heading in headings %}
+                    <th class="dashboard-th">{{heading}}</th>
+                    
+                    {% endfor %}
+                    </tr>
+                    {% for row in donordata %}
+                    <tr class="dashboard-tr">
+                    {% for cell in row %}
+                    <td class = "dashboard-td"> {{cell}}</td>
+                    
+                    {% endfor %}
+                        <script>
+                        </script>
+                        <!--
+                    <td class = "dashboard-td"><button class="btn btn-primary btn-md" id="accept-btn-donor" onclick="acceptDonor()">Got it!</button></td>
+                        -->
+                    </tr>
+                    {% endfor %}
+                    </table>
+    
+    
+            </table>
+           </div>
+    
+         
+    
+         <!-- </div> -->
+         <!--
+        <div id="donor-accepted">
+            <center>Your have accepted the donor!</center>
+        </div>
+        <br>
+        <Br>
+        {% endif %}
+        -->
+    
+        <!--Beneficiary Dashboard End-->
+        
+        
+        </div>
+    
+        <script>
+            function requestDonors(){
+                
+                document.getElementById('donor-req-btn').innerHTML="Requested";
+                document.getElementById('donor-req-btn').disabled=true;
+                document.getElementById('request-pending').style.display="block";
+    
+            } 
+    
+            function endrequestingDonor(){
+                document.getElementById('donor-req-btn').innerHTML="Requesting stopped";
+                document.getElementById('donor-req-btn').disabled=true;
+                document.getElementById('request-pending').style.display="block";
+               
+            }
+    
+            function accept(id){
+                
+                document.getElementById(id).disabled=true;
+                document.getElementById(id).innerHTML="Accepted";
+    
+                document.getElementById('request-accepted').style.display="block";
+                document.getElementById('beneficiary-info').style.display="block";
+    
+            }
+            function acceptDonor(){
+                document.getElementById('accept-btn-donor').disabled=true;
+                document.getElementById('accept-btn-donor').innerHTML="Accepted";
+    
+                document.getElementById('donor-accepted').style.display="block";
+            }
+    
+        </script>
+    
+    {% endblock %} 
+    
+    

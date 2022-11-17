@@ -1,0 +1,240 @@
+
+{% extends 'base.html' %}
+{% include 'navbar.html' %} 
+
+{% block head %}
+    <title>Profile</title>
+    
+{% endblock %} 
+
+
+{% block body %}
+
+
+<div >    
+    <h3>Welcome {{session['user']}} {{session['role']}}</h3> 
+    <br>          
+</div>
+
+
+
+{% if role=="donor" %}
+<!--Donor Dashboard Start--> 
+
+<!--email sample
+<h1>Twilio SendGrid Example</h1>
+        {% with messages = get_flashed_messages() %}
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endwith %}
+        <form action="/send_mail" method="post">
+            <p>Your email: <input type="text" name="recipient"></p>
+            <p><input type="submit" value="Send a Test Email"></p>
+        </form>
+-->
+
+{% if session['role']=="donor" %}
+
+          <form method="post" action="/all_requests">
+            <input type="Submit" name="all-requests" value="All Requests">
+          </form>
+          <br>
+          <form method="post" action="/saved_requests">
+            <input type="Submit" name="saved-requests" value="Saved Requests">
+          </form>
+
+{% endif %}
+
+<hr>
+<h3>My-Dashboard</h3>
+<div class="donor-dashboard">
+<h3 align = "center">Requests</h3>
+<br><br>
+
+<div class="table-all">
+
+    <table name="list" class="dashboard-table">
+        <tr class="dashboard-tr">
+    {% for heading in headings %}
+    <th class="dashboard-th">{{heading}}</th>
+    
+    {% endfor %}
+    </tr>
+ 
+    {% for users in requesters_list %}
+    <form method="post" action="/save_button">
+    <tr class="dashboard-tr">
+    
+    <td><input class = "dashboard-td" name="bene_name" value="{{ users['NAME'] }}"></td>
+    <td class = "dashboard-td">{{ users['LASTNAME'] }}</td>
+    <td><input class = "dashboard-td" name="bene_email" value="{{ users['EMAIL'] }}"></td>
+    <td class = "dashboard-td">{{ users['PHONE'] }}</td>
+    <td class = "dashboard-td">{{ users['ADDRESS'] }}</td>
+    <td class = "dashboard-td">{{ users['CITY'] }}</td>
+    <td class = "dashboard-td">{{ users['AGE'] }}</td> 
+    <td class = "dashboard-td">{{ users['BLOODGROUP'] }}</td>
+    <td class = "dashboard-td">{{ users['CERTIFICATE_UPLOADED'] }}</td>
+    <td>
+        
+        <input type="submit" class = "dashboard-td" id="accept-btn-{{users[0]}}" onclick="accept(id)" value="Save">
+        
+    </td> 
+
+    
+    <!--<td class = "dashboard-td"><button class="btn btn-primary btn-md" id="accept-btn-{{users[0]}}" onclick="accept(id)">Save</button></td>-->
+    
+    </tr>
+    </form>
+    {% endfor %}
+ 
+
+    </table>
+</div>
+</div>
+
+
+
+
+<!--donor Dashboard End-->
+
+<!--Beneficiary Dashboard start-->
+<br><br><br><br><br><br>
+{% endif %} 
+
+
+{% if role!="donor" %}
+<h1>Beneficiary Dashboard</h1>
+
+<div class="beneficiary-dashboard">
+    <h3 align="center">My Details</h3>
+    <br>
+    <div class="beneficiary-details">
+        <table align="center" class = "beneficiary-table">
+            <tr class="beneficiary-table-row">
+                <th class="beneficiary-table-header">Name</th>
+                <td class="beneficiary-table-data">{{session['user']}}</td>
+            </tr>
+            <tr class="beneficiary-table-row">
+                <th class="beneficiary-table-header">Blood Group</th>
+                <td class="beneficiary-table-data">{{session['bloodgroup']}}</td>
+            </tr>
+            <tr class="beneficiary-table-row">
+                <th class="beneficiary-table-header">Email</th>
+                <td class="beneficiary-table-data">{{session['email']}}</td>
+            </tr>
+            <tr class="beneficiary-table-row">
+                <th class="beneficiary-table-header">Location</th>
+                <td class="beneficiary-table-data">{{session['city']}}</td>
+            </tr>
+            <tr class="beneficiary-table-row">
+                <th class="beneficiary-table-header">Phone</th>
+                <td class="beneficiary-table-data">{{session['phone']}}</td>
+            </tr>
+
+        </table>
+        <br><br>
+    </div>
+        {% if beneficiary_status!="requested" %}
+    
+        
+        <form action="/change_to_requested_status" method="POST" name="changeStatus" onsubmit="requestDonors()">
+            <center>
+            <div>
+               <input type="submit" class="btn btn-primary btn-lg" id="donor-req-btn"   value="Request Donors">
+                
+            </div>
+            <div id="request-pending" >
+                Your request is being processed... 
+            </div>
+            </center>
+        </form> 
+        
+       {% endif %}
+       <br><br>
+
+       {% if beneficiary_status=="requested" %} 
+
+       <form action="/change_to_none_status" method="POST" name="changeStatus2" >
+        <center>
+        <div>
+           <input type="submit" class="btn btn-primary btn-lg" id="donor-req-btn" onclick="endrequestDonors()" value="Stop Requesting Donors">
+            
+        </div>
+        <div id="request-pending" >
+            Your request has been stopped... 
+        </div>
+        </center>
+        </form> 
+
+       
+       {% endif %}
+       <br><br>
+    <!--
+       <div id="donor-info">
+        <table class="dashboard-table">
+            <tr class="dashboard-tr">
+                {% for heading in headings %}
+                <th class="dashboard-th">{{heading}}</th>
+                
+                {% endfor %}
+                </tr>
+                {% for row in donordata %}
+                <tr class="dashboard-tr">
+                {% for cell in row %}
+                <td class = "dashboard-td"> {{cell}}</td>
+                
+                {% endfor %}
+                    
+                </tr>
+                {% endfor %}
+                </table>
+
+
+        </table>
+       </div>
+    -->
+
+</div>
+
+{% endif %}
+
+
+
+
+    <script>
+        function requestDonors(){
+            
+            document.getElementById('donor-req-btn').innerHTML="Requested";
+            document.getElementById('donor-req-btn').disabled=true;
+            document.getElementById('request-pending').style.display="block";
+
+        } 
+
+        function endrequestingDonor(){
+            document.getElementById('donor-req-btn').innerHTML="Requesting stopped";
+            document.getElementById('donor-req-btn').disabled=true;
+            document.getElementById('request-pending').style.display="block";
+           
+        }
+
+        function accept(id){
+            
+            document.getElementById(id).disabled=true;
+            document.getElementById(id).innerHTML="Accepted";
+
+            document.getElementById('request-accepted').style.display="block";
+            document.getElementById('beneficiary-info').style.display="block";
+
+        }
+        function acceptDonor(){
+            document.getElementById('accept-btn-donor').disabled=true;
+            document.getElementById('accept-btn-donor').innerHTML="Accepted";
+
+            document.getElementById('donor-accepted').style.display="block";
+        }
+
+    </script>
+
+{% endblock %} 
+
