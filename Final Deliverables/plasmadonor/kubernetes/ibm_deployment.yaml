@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plasmadonor
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: plasmadonor
+  template:
+    metadata:
+      labels:
+        app: plasmadonor
+
+    spec:
+      containers:
+        - name: plasmadonor-container
+          image: uk.icr.io/kub_ns/appdeployimage
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+              protocol: TCP
