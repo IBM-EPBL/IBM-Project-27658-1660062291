@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-in-flask
+
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: blog-in-flask
+  template:
+    metadata:
+      labels:
+        app:blog-in-flask
+
+    spec:
+      containers:
+        - name: blog-in-flask-app-container
+          image: uk.icr.io/kub_ns/flask-app-t1
+          imagePullPolicy: Always 
+          ports:
+            - containerPort: 5000
+              protocol: TCP
