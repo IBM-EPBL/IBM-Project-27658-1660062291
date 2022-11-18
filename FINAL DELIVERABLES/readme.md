@@ -1,4 +1,7 @@
 Final Deliverables:
 
-Code uplaod done
-PRoject Documentation done 
+1.Code uplaod done
+
+2.Project Documentation done 
+
+3.Demo video done
