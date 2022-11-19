@@ -31,7 +31,7 @@ cos = ibm_boto3.resource("s3",
 app = Flask(__name__)
 SESSION_TYPE = "filesystem"
 PERMANENT_SESSION_LIFETIME = 1200
-
+ 
 #app.config.update(SECRET_KEY=os.urandom(24))
 
 app.config.from_object(__name__)
