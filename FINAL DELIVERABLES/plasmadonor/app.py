@@ -47,8 +47,10 @@ app.config['MAIL_SERVER'] = 'smtp.sendgrid.net'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'apikey'
-app.config['MAIL_PASSWORD'] = "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"
-app.config['MAIL_DEFAULT_SENDER'] = "anan19110.cs@rmkec.ac.in"
+
+#below details not given for security puposes
+app.config['MAIL_PASSWORD'] = ""
+app.config['MAIL_DEFAULT_SENDER'] = ""
 mail = Mail(app) 
 #end for mailing
 
