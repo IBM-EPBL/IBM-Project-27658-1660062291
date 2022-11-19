@@ -1,6 +1,6 @@
 Final Deliverables:
 
-1.Code uplaod done
+1.Code upload done
 
 2.Project Documentation done  
 
